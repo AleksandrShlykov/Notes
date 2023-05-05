@@ -21,40 +21,41 @@ namespace Notes.Identity
         public static IEnumerable<ApiResource> ApiResources =>
             new List<ApiResource>
             {
-                new ApiResource("NotesWebApi", "Web API", new[] {JwtClaimTypes.Name})
+                new ApiResource("NotesWebApi", "Web API")
                 {
-                    Scopes = {"NotesWebAPI"}
+                    Scopes = { "NotesWebApi" }
                 }
             };
         public static IEnumerable<Client> Clients =>
-            new List<Client>
+            new List<Client> 
             {
                 new Client
                 {
                 ClientId = "notes-web-api",
                 ClientName = "Notes Web",
+                ClientSecrets = {new Secret( "notesWebapp_secret".ToSha256())},
                 AllowedGrantTypes = GrantTypes.Code,
                 RequireClientSecret = false,
                 RequirePkce  =true,
                 RedirectUris =
                     {
-                        "http://localhost:3000/signin-oidc"
+                        "https://localhost:7227/signin-oidc", "http://localhost:44322/signin-oidc"
                     },
                 AllowedCorsOrigins =
                     {
-                        "http://localhost:3000"
+                        "https://localhost:7227"
                     },
                 PostLogoutRedirectUris =
                     {
-                        "http://localhost:3000/signout-oidc"
+                        "https://localhost:7227/signout-oidc"
                     },
                 AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "NotesWebAPI"
+                        "NotesWebApi"
                     },
-                AllowAccessTokensViaBrowser = true
+               AllowAccessTokensViaBrowser = true
                 }
             };
     }
