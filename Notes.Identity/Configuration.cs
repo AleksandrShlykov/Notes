@@ -64,10 +64,7 @@ namespace Notes.Identity
                     },
                AllowAccessTokensViaBrowser = true,
                AlwaysIncludeUserClaimsInIdToken = true
-
-                    },
-               AllowAccessTokensViaBrowser = true
-                };
+                }
             };
     }
 }
