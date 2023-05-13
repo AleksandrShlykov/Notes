@@ -22,17 +22,14 @@ namespace Notes.Identity
         public static IEnumerable<ApiResource> ApiResources =>
             new List<ApiResource>
             {
-                new ApiResource("NotesWebApi", "Web API", new[] {JwtClaimTypes.Name})
+                new ApiResource("NotesWebApi", "Web API")
                 {
-<<<<<<< Updated upstream
-                    Scopes = {"NotesWebAPI"}
-=======
                     Scopes = { "NotesWebApi" }
                 },
                  new ApiResource("notesTestapi", "Test API")
                 {
-                    Scopes = { "notesTestapi" }
->>>>>>> Stashed changes
+                    Scopes = { "NotesWebApi" }
+
                 }
             };
         public static IEnumerable<Client> Clients =>
@@ -42,37 +39,35 @@ namespace Notes.Identity
                 {
                 ClientId = "notes-web-api",
                 ClientName = "Notes Web",
+                ClientSecrets = {new Secret( "notesWebapp_secret".ToSha256())},
                 AllowedGrantTypes = GrantTypes.Code,
                // RequireClientSecret = true,
                 //RequirePkce  =true,
                 RedirectUris =
                     {
-                        "http://localhost:3000/signin-oidc"
+                        "https://localhost:7227/signin-oidc", "http://localhost:44322/signin-oidc"
                     },
                 AllowedCorsOrigins =
                     {
-                        "http://localhost:3000"
+                        "https://localhost:7227"
                     },
                 PostLogoutRedirectUris =
                     {
-                        "http://localhost:3000/signout-oidc"
+                        "https://localhost:7227/signout-oidc"
                     },
                 AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-<<<<<<< Updated upstream
-                        "NotesWebAPI"
-                    },
-                AllowAccessTokensViaBrowser = true
-=======
                         "NotesWebApi",
-                        "notesTestapi"
+
                     },
                AllowAccessTokensViaBrowser = true,
                AlwaysIncludeUserClaimsInIdToken = true
->>>>>>> Stashed changes
-                }
+
+                    },
+               AllowAccessTokensViaBrowser = true
+                };
             };
     }
 }

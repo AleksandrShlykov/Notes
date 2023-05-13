@@ -1,4 +1,5 @@
-﻿using IdentityServer4.Services;
+﻿using IdentityServer4.Extensions;
+using IdentityServer4.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Notes.Identity.Models;
@@ -32,6 +33,8 @@ namespace Notes.Identity.Controllers
         {
             if (!ModelState.IsValid)
             {
+
+              
                 return View(viewModel);
             }
 
@@ -55,6 +58,10 @@ namespace Notes.Identity.Controllers
         [HttpGet]
         public IActionResult Register(string returnUrl)
         {
+            if(returnUrl.IsNullOrEmpty())
+            {
+               returnUrl = "Auth/login";
+            }
             var viewModel = new RegisterViewModel
             {
                 ReturnUrl = returnUrl
@@ -67,12 +74,16 @@ namespace Notes.Identity.Controllers
         {
             if (!ModelState.IsValid)
             {
+                foreach (var item in ModelState)
+                {
+                    Console.WriteLine($"Key: {item.Key}, Value: {item.Value};");
+                }
                 return View(viewModel);
             }
 
             var user = new AppUser
             {
-                UserName = viewModel.UserName
+                 UserName = viewModel.UserName
             };
 
             var result = await _userManager.CreateAsync(user, viewModel.Password);
@@ -80,6 +91,14 @@ namespace Notes.Identity.Controllers
             {
                 await _signInManager.SignInAsync(user, false);
                 return Redirect(viewModel.ReturnUrl);
+            }
+            else
+            {
+                foreach (var error in result.Errors)
+                {
+
+                    Console.WriteLine($"Code: {error.Code}, Description: {error.Description};");
+                }
             }
             ModelState.AddModelError(string.Empty, "Error occurred");
             return View(viewModel);

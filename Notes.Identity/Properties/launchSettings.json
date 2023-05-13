@@ -1,45 +1,16 @@
 {
   "profiles": {
-<<<<<<< Updated upstream
-    "http": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5132"
-    },
-=======
-  
->>>>>>> Stashed changes
+
+
     "https": {
       "commandName": "Project",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-<<<<<<< Updated upstream
       "applicationUrl": "https://localhost:7032;http://localhost:5132"
-    },
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-=======
-      "applicationUrl": "https://localhost:7032"
->>>>>>> Stashed changes
-    }
-  },
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:47022 ",
-      "sslPort": 44341
+
     }
   }
 }
