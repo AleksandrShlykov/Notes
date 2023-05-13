@@ -1,0 +1,30 @@
+﻿@using Notes.Application.Notes.Queries.GetNoteList;
+@model NoteListVm;
+@{
+    ViewData["Title"] = "NewNOte Page";
+}
+
+
+<div class="row row-cols-auto justify-content-center">
+    
+        @foreach (var item in Model.Notes) {
+        <div class="col-sm-3">
+        <div class="card text-center w-100" id="NoteCard">
+            <div class="card-body">
+                <h5 class="card-title">@item.Title</h5>
+                @Html.ActionLink("Edit", "UpdateNote", new { id=item.Id }, new { @class = "btn btn-primary" })
+                
+                @Html.ActionLink("Details", "GetNoteDetails", new { id=item.Id }, new { @class = "btn btn-primary", @id= "GetDetails" }) 
+                @Html.ActionLink("Delete", "DeleteNote", new { id=item.Id }, new { @class = "btn btn-danger" })
+            </div>
+        </div>
+        </div>
+        }
+       <div class="col-sm-3 d-flex align-items-center">
+  <a type="button" class="btn btn-outline-primary align-middle" value="New Note" asp-controller="Note" asp-action="CreateNote">Create New</a>
+</div>
+</div>
+
+<script src="~/js/script.js"></script>
+     
+    
