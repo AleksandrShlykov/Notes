@@ -1,2 +1,2 @@
-# Notes.Identety
-AuthService for notes App
+# Notes
+WebApi, identity server and client web application for notes managment
