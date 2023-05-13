@@ -10,7 +10,6 @@ namespace Notes.Identity
         public static IEnumerable<ApiScope> ApiScopes =>
             new List<ApiScope>
             {
-                new ApiScope("NotesWebApi", "Web API")
                 new ApiScope("NotesWebApi", "Web API"),
                 new ApiScope("notesTestapi", "Test API")
             };
@@ -44,8 +43,6 @@ namespace Notes.Identity
                 ClientId = "notes-web-api",
                 ClientName = "Notes Web",
                 AllowedGrantTypes = GrantTypes.Code,
-                RequireClientSecret = false,
-                RequirePkce  =true,
                // RequireClientSecret = true,
                 //RequirePkce  =true,
                 RedirectUris =
