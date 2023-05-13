@@ -11,6 +11,8 @@ namespace Notes.Identity
             new List<ApiScope>
             {
                 new ApiScope("NotesWebApi", "Web API")
+                new ApiScope("NotesWebApi", "Web API"),
+                new ApiScope("notesTestapi", "Test API")
             };
         public static IEnumerable<IdentityResource> IdentityResources =>
             new List<IdentityResource>
@@ -23,7 +25,15 @@ namespace Notes.Identity
             {
                 new ApiResource("NotesWebApi", "Web API", new[] {JwtClaimTypes.Name})
                 {
+<<<<<<< Updated upstream
                     Scopes = {"NotesWebAPI"}
+=======
+                    Scopes = { "NotesWebApi" }
+                },
+                 new ApiResource("notesTestapi", "Test API")
+                {
+                    Scopes = { "notesTestapi" }
+>>>>>>> Stashed changes
                 }
             };
         public static IEnumerable<Client> Clients =>
@@ -36,6 +46,8 @@ namespace Notes.Identity
                 AllowedGrantTypes = GrantTypes.Code,
                 RequireClientSecret = false,
                 RequirePkce  =true,
+               // RequireClientSecret = true,
+                //RequirePkce  =true,
                 RedirectUris =
                     {
                         "http://localhost:3000/signin-oidc"
@@ -52,9 +64,17 @@ namespace Notes.Identity
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
+<<<<<<< Updated upstream
                         "NotesWebAPI"
                     },
                 AllowAccessTokensViaBrowser = true
+=======
+                        "NotesWebApi",
+                        "notesTestapi"
+                    },
+               AllowAccessTokensViaBrowser = true,
+               AlwaysIncludeUserClaimsInIdToken = true
+>>>>>>> Stashed changes
                 }
             };
     }

@@ -1,5 +1,6 @@
 {
   "profiles": {
+<<<<<<< Updated upstream
     "http": {
       "commandName": "Project",
       "launchBrowser": true,
@@ -9,6 +10,9 @@
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5132"
     },
+=======
+  
+>>>>>>> Stashed changes
     "https": {
       "commandName": "Project",
       "launchBrowser": true,
@@ -16,6 +20,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
+<<<<<<< Updated upstream
       "applicationUrl": "https://localhost:7032;http://localhost:5132"
     },
     "IIS Express": {
@@ -24,6 +29,9 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+=======
+      "applicationUrl": "https://localhost:7032"
+>>>>>>> Stashed changes
     }
   },
   "iisSettings": {
