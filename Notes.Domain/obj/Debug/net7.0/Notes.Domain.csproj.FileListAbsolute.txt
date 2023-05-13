@@ -34,3 +34,15 @@ C:\Code\Study\repos\Notes.Backend2\Notes.Domain\obj\Debug\net7.0\Notes.Domain.dl
 C:\Code\Study\repos\Notes.Backend2\Notes.Domain\obj\Debug\net7.0\refint\Notes.Domain.dll
 C:\Code\Study\repos\Notes.Backend2\Notes.Domain\obj\Debug\net7.0\Notes.Domain.pdb
 C:\Code\Study\repos\Notes.Backend2\Notes.Domain\obj\Debug\net7.0\ref\Notes.Domain.dll
+C:\Code\Study\repos\Notes.Backend\Notes.Domain\bin\Debug\net7.0\Notes.Domain.deps.json
+C:\Code\Study\repos\Notes.Backend\Notes.Domain\bin\Debug\net7.0\Notes.Domain.dll
+C:\Code\Study\repos\Notes.Backend\Notes.Domain\bin\Debug\net7.0\Notes.Domain.pdb
+C:\Code\Study\repos\Notes.Backend\Notes.Domain\obj\Debug\net7.0\Notes.Domain.csproj.AssemblyReference.cache
+C:\Code\Study\repos\Notes.Backend\Notes.Domain\obj\Debug\net7.0\Notes.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\Study\repos\Notes.Backend\Notes.Domain\obj\Debug\net7.0\Notes.Domain.AssemblyInfoInputs.cache
+C:\Code\Study\repos\Notes.Backend\Notes.Domain\obj\Debug\net7.0\Notes.Domain.AssemblyInfo.cs
+C:\Code\Study\repos\Notes.Backend\Notes.Domain\obj\Debug\net7.0\Notes.Domain.csproj.CoreCompileInputs.cache
+C:\Code\Study\repos\Notes.Backend\Notes.Domain\obj\Debug\net7.0\Notes.Domain.dll
+C:\Code\Study\repos\Notes.Backend\Notes.Domain\obj\Debug\net7.0\refint\Notes.Domain.dll
+C:\Code\Study\repos\Notes.Backend\Notes.Domain\obj\Debug\net7.0\Notes.Domain.pdb
+C:\Code\Study\repos\Notes.Backend\Notes.Domain\obj\Debug\net7.0\ref\Notes.Domain.dll
