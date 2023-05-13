@@ -10,7 +10,22 @@ var builder = WebApplication.CreateBuilder(args);
 RegisterService(builder.Services);
 
 var app = builder.Build();
+
 Configure(app);
+using (var scope = app.Services.CreateScope())
+{
+    var serviceProvider = scope.ServiceProvider;
+    try
+    {
+        var context = serviceProvider.GetRequiredService<AuthDbContext>();
+        DbInitializer.Initialize(context);
+    }
+    catch (Exception exception)
+    {
+        var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
+        logger.LogError(exception, "An error occured while app initialize");
+    }
+}
 app.Run();
 
 void RegisterService(IServiceCollection services)
@@ -21,20 +36,7 @@ void RegisterService(IServiceCollection services)
     {
         options.UseSqlite(connectionString);
     });
-    using (var scope = services.BuildServiceProvider().CreateScope())
-    {
-        var serviceProvider = scope.ServiceProvider;
-        try
-        {
-            var context = serviceProvider.GetRequiredService<AuthDbContext>();
-            DbInitializer.Initialize(context);
-        }
-        catch (Exception exception)
-        {
-            var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
-            logger.LogError(exception, "An error occured while app initialize");
-        }
-    }
+
     services.AddIdentity<AppUser, IdentityRole>(config =>
     {
         config.Password.RequiredLength = 4;
@@ -45,7 +47,11 @@ void RegisterService(IServiceCollection services)
         .AddEntityFrameworkStores<AuthDbContext>()
         .AddDefaultTokenProviders();
 
-    services.AddIdentityServer()
+    services.AddIdentityServer(options =>
+    {
+        options.UserInteraction.LoginUrl = "/Auth/Login";
+        options.UserInteraction.LogoutUrl = "/Auth/Logout";
+    })
         .AddAspNetIdentity<AppUser>()
         .AddInMemoryApiResources(Configuration.ApiResources)
         .AddInMemoryIdentityResources(Configuration.IdentityResources)
@@ -55,12 +61,8 @@ void RegisterService(IServiceCollection services)
 
     services.ConfigureApplicationCookie(config =>
     {
-        config.Cookie.Name = "Notes.Identity.Cookie";
-        config.LoginPath = "/Auth/login";
-        config.LogoutPath = "/Auth/logout";
     });
     services.AddControllersWithViews();
-    //services.AddMvc();
 }
 void Configure(WebApplication app)
 {
@@ -68,13 +70,11 @@ void Configure(WebApplication app)
     {
         app.UseDeveloperExceptionPage();
     }
-    app.UseStaticFiles(new StaticFileOptions
-    {
-        FileProvider = new PhysicalFileProvider(Path.Combine(app.Environment.ContentRootPath, "Styles")),
-        RequestPath = "/Styles"
-    });
+    app.UseStaticFiles();
     app.UseRouting();
+    app.UseAuthentication();
+    app.UseAuthorization();
     app.UseIdentityServer();
-    //app.MapGet("/", () => "identity!");
+    app.MapGet("/Index", () => "Login succes");
     app.MapDefaultControllerRoute();
 }
