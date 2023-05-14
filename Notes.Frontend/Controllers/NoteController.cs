@@ -15,6 +15,9 @@ using Notes.WebApi;
 using Notes.WebAPI.Modelas;
 using Notes.Application.Notes.Queries.GetNoteList;
 using Notes.Application.Notes.Queries.GetNoteDetails;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+
 namespace Notes.Frontend.Controllers
 {
     
@@ -47,6 +50,12 @@ namespace Notes.Frontend.Controllers
         {
             
             return  Redirect("/note/getallnote");
+        }
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            return  SignOut(CookieAuthenticationDefaults.AuthenticationScheme,
+            OpenIdConnectDefaults.AuthenticationScheme);
         }
         [Authorize]
         [HttpGet]

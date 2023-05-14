@@ -11953,28 +11953,27 @@
     },
     "Notes.Application/1.0.0": {
       "type": "project",
-      "path": "../Notes.Backend/Notes.Application/Notes.Application.csproj",
-      "msbuildProject": "../Notes.Backend/Notes.Application/Notes.Application.csproj"
+      "path": "../Notes.Application/Notes.Application.csproj",
+      "msbuildProject": "../Notes.Application/Notes.Application.csproj"
     },
     "Notes.Domain/1.0.0": {
       "type": "project",
-      "path": "../Notes.Backend/Notes.Domain/Notes.Domain.csproj",
-      "msbuildProject": "../Notes.Backend/Notes.Domain/Notes.Domain.csproj"
+      "path": "../Notes.Domain/Notes.Domain.csproj",
+      "msbuildProject": "../Notes.Domain/Notes.Domain.csproj"
     },
     "Notes.Persistion/1.0.0": {
       "type": "project",
-      "path": "../Notes.Backend/Notes.Persistion/Notes.Persistion.csproj",
-      "msbuildProject": "../Notes.Backend/Notes.Persistion/Notes.Persistion.csproj"
+      "path": "../Notes.Persistion/Notes.Persistion.csproj",
+      "msbuildProject": "../Notes.Persistion/Notes.Persistion.csproj"
     },
     "Notes.WebApi/1.0.0": {
       "type": "project",
-      "path": "../Notes.Backend/Notes.WebApi/Notes.WebApi.csproj",
-      "msbuildProject": "../Notes.Backend/Notes.WebApi/Notes.WebApi.csproj"
+      "path": "../Notes.WebApi/Notes.WebApi.csproj",
+      "msbuildProject": "../Notes.WebApi/Notes.WebApi.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "C:\\Code\\Study\\Notes.Backend\\Notes.WebApi\\Notes.WebApi.csproj",
       "IdentityModel >= 6.1.0",
       "IdentityModel.OidcClient >= 5.2.1",
       "IdentityServer4 >= 4.1.2",
@@ -11991,11 +11990,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Code\\Study\\repos\\Notes.Frontend\\Notes.Frontend.csproj",
+      "projectUniqueName": "C:\\Code\\Study\\repos\\Notes\\Notes.Frontend\\Notes.Frontend.csproj",
       "projectName": "Notes.Frontend",
-      "projectPath": "C:\\Code\\Study\\repos\\Notes.Frontend\\Notes.Frontend.csproj",
+      "projectPath": "C:\\Code\\Study\\repos\\Notes\\Notes.Frontend\\Notes.Frontend.csproj",
       "packagesPath": "C:\\Users\\Aleks\\.nuget\\packages\\",
-      "outputPath": "C:\\Code\\Study\\repos\\Notes.Frontend\\obj\\",
+      "outputPath": "C:\\Code\\Study\\repos\\Notes\\Notes.Frontend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Aleks\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -12012,11 +12011,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Code\\Study\\Notes.Backend\\Notes.WebApi\\Notes.WebApi.csproj": {
-              "projectPath": "C:\\Code\\Study\\Notes.Backend\\Notes.WebApi\\Notes.WebApi.csproj"
-            },
-            "C:\\Code\\Study\\repos\\Notes.Backend\\Notes.WebApi\\Notes.WebApi.csproj": {
-              "projectPath": "C:\\Code\\Study\\repos\\Notes.Backend\\Notes.WebApi\\Notes.WebApi.csproj"
+            "C:\\Code\\Study\\repos\\Notes\\Notes.WebApi\\Notes.WebApi.csproj": {
+              "projectPath": "C:\\Code\\Study\\repos\\Notes\\Notes.WebApi\\Notes.WebApi.csproj"
             }
           }
         }
@@ -12084,15 +12080,6 @@
     }
   },
   "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Code\\Study\\Notes.Backend\\Notes.WebApi\\Notes.WebApi.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Code\\Study\\Notes.Backend\\Notes.WebApi\\Notes.WebApi.csproj",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    },
     {
       "code": "NU1701",
       "level": "Warning",

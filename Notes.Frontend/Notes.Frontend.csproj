@@ -31,8 +31,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Notes.Backend\Notes.WebApi\Notes.WebApi.csproj" />
-    <ProjectReference Include="..\Notes.Backend\Notes.WebApi\Notes.WebApi.csproj" />
+    <ProjectReference Include="..\Notes.WebApi\Notes.WebApi.csproj" />
   </ItemGroup>
 
 </Project>

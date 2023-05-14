@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UDR3pvrKSGN7zKQEYxwQwOOwFyyTVFTFiuFapsafKDKXtskRTpifzYDkYmVshghvfDYwMBIEEcYvldFsBGLaXg==",
-  "success": false,
-  "projectFilePath": "C:\\Code\\Study\\repos\\Notes.Frontend\\Notes.Frontend.csproj",
+  "dgSpecHash": "AT+b7Zb47KcZl/Xx2dhI3ePoPfM5jDDRxvuJzT/UgVFRROsZ5BUCuTwcMywAcw69IMhpZPTjglbzg2RWqireYg==",
+  "success": true,
+  "projectFilePath": "C:\\Code\\Study\\repos\\Notes\\Notes.Frontend\\Notes.Frontend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aleks\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Aleks\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
@@ -215,15 +215,6 @@
     "C:\\Users\\Aleks\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Code\\Study\\Notes.Backend\\Notes.WebApi\\Notes.WebApi.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Code\\Study\\Notes.Backend\\Notes.WebApi\\Notes.WebApi.csproj",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    },
     {
       "code": "NU1701",
       "level": "Warning",

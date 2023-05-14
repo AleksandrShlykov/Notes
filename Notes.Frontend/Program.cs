@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
 using System.Configuration;
@@ -18,10 +19,10 @@ builder.Services.AddHttpClient();
 builder.Services.AddAuthentication(config=>
 {
     config.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    config.DefaultChallengeScheme = "oidc";
+    config.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
 })
     .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddOpenIdConnect("oidc", config=>
+    .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, config=>
     {
         config.Authority = "https://localhost:7032";
         config.ClientSecret = "notesWebapp_secret";
