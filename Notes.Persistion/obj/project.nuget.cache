@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yrdw5/jvEWtJvh8RoWaL8eBOSivnulbybNNmEltXPpEpVrfPZQkqJ/k9k9KvGsEei7n7s8nvVZTBcnHvbB2Bpw==",
+  "dgSpecHash": "OsPNL8VqhwzEgQTIKdpcM4GymDSvoAv/cDvgQDuta5xeaekF4lrv0YLiAY/sMWfgY6XBFROE5zNJ9keF7j1m1Q==",
   "success": true,
-  "projectFilePath": "C:\\Code\\Study\\repos\\Notes.Backend\\Notes.Persistion\\Notes.Persistion.csproj",
+  "projectFilePath": "C:\\Code\\Study\\repos\\Notes\\Notes.Persistion\\Notes.Persistion.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aleks\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Aleks\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",

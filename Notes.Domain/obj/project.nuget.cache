@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lWejPILIFLVDK4fcLHTcRaZlTcn7uBomG3B+KNch4l/Mc+hhjC5KlxHtNy2hmQSUcwA6+0mYxNk5JSX1pZwQtw==",
+  "dgSpecHash": "9geN75Eg/yYG6NuxK+Aq7MuOWn7cUr2EpnGPJW2GOgd7eSWshW5rX9VozN1M4A4yjq4dPzODIGswQuZ+e2FPpg==",
   "success": true,
-  "projectFilePath": "C:\\Code\\Study\\repos\\Notes.Backend\\Notes.Domain\\Notes.Domain.csproj",
+  "projectFilePath": "C:\\Code\\Study\\repos\\Notes\\Notes.Domain\\Notes.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

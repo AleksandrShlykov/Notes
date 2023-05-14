@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y4t3xOABe4JltysnknDPUIx6erFhluzWdJw6pp1fAVp9zt2iSnxXiKSevR4jtJSE6o9REGjv0Cb4Zov2fOXy+w==",
+  "dgSpecHash": "QLoLHqbwgyI8WrC9/RWk4kPISWRr+lUKwHzfIVn4wyn1VL/kFKv5zY+DE92o0iMgE3+kuCZ5ycq1EcqoKhgGAg==",
   "success": true,
-  "projectFilePath": "C:\\Code\\Study\\repos\\Notes.Backend\\Notes.Application\\Notes.Application.csproj",
+  "projectFilePath": "C:\\Code\\Study\\repos\\Notes\\Notes.Application\\Notes.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aleks\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Aleks\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",

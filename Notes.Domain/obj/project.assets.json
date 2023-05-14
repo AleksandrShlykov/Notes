@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Code\\Study\\repos\\Notes.Backend\\Notes.Domain\\Notes.Domain.csproj",
+      "projectUniqueName": "C:\\Code\\Study\\repos\\Notes\\Notes.Domain\\Notes.Domain.csproj",
       "projectName": "Notes.Domain",
-      "projectPath": "C:\\Code\\Study\\repos\\Notes.Backend\\Notes.Domain\\Notes.Domain.csproj",
+      "projectPath": "C:\\Code\\Study\\repos\\Notes\\Notes.Domain\\Notes.Domain.csproj",
       "packagesPath": "C:\\Users\\Aleks\\.nuget\\packages\\",
-      "outputPath": "C:\\Code\\Study\\repos\\Notes.Backend\\Notes.Domain\\obj\\",
+      "outputPath": "C:\\Code\\Study\\repos\\Notes\\Notes.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Aleks\\AppData\\Roaming\\NuGet\\NuGet.Config",

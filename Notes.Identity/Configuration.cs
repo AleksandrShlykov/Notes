@@ -53,7 +53,7 @@ namespace Notes.Identity
                     },
                 PostLogoutRedirectUris =
                     {
-                        "https://localhost:7227/signout-oidc"
+                        "https://localhost:7227/signout-callback-oidc"
                     },
                 AllowedScopes =
                     {
