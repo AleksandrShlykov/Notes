@@ -373,5 +373,5 @@ Notes.WebApi/Alex.Notes.db-wal
 Notes.WebApi/Alex.Notes.db-shm
 
 # bin and obf directories
-bin
-obj
+*/bin/
+*/obj/
