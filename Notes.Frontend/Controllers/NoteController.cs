@@ -1,35 +1,26 @@
 ﻿using IdentityModel.Client;
-using IdentityServer4.Models;
-using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using Notes.Frontend.Data;
-using Notes.Frontend.Models;
-using Notes.Frontend.ViewModel;
-using System.Diagnostics;
-using System.IdentityModel.Tokens.Jwt;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using Notes.WebApi;
-using Notes.WebAPI.Modelas;
-using Notes.Application.Notes.Queries.GetNoteList;
 using Notes.Application.Notes.Queries.GetNoteDetails;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Notes.Application.Notes.Queries.GetNoteList;
+using Notes.Frontend.ViewModel;
+using Notes.WebAPI.Modelas;
+using System.Net.Http.Headers;
 
 namespace Notes.Frontend.Controllers
 {
-    
     public class NoteController : Controller
     {
         private readonly ILogger<NoteController> _logger;
         private readonly IHttpClientFactory _clientFactory;
         string _baseUrl = "https://localhost:7157/api/";
         string _apiVersion = "1.0/";
-        private  NoteListVm _notes;
+        private NoteListVm _notes;
 
-        public NoteController(ILogger<NoteController> logger,IHttpClientFactory clientFactory)
+        public NoteController(ILogger<NoteController> logger, IHttpClientFactory clientFactory)
         {
             _logger = logger;
             _clientFactory = clientFactory;
@@ -38,44 +29,45 @@ namespace Notes.Frontend.Controllers
         [HttpGet]
         public async Task<IActionResult> LoginPage()
         {
-            if(User.Identity.IsAuthenticated)
+            if (User.Identity.IsAuthenticated)
             {
-                return  Redirect("/note/getallnote");
+                return Redirect("/note/getallnote");
             }
-            return  View();
+            return View();
         }
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> GoToLogin()
         {
-            
-            return  Redirect("/note/getallnote");
+
+            return Redirect("/note/getallnote");
         }
         [Authorize]
         public async Task<IActionResult> Logout()
         {
-            return  SignOut(CookieAuthenticationDefaults.AuthenticationScheme,
+            return SignOut(CookieAuthenticationDefaults.AuthenticationScheme,
             OpenIdConnectDefaults.AuthenticationScheme);
         }
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAllNote()
         {
-          
+
             var client = _clientFactory.CreateClient();
-            client.BaseAddress = new Uri(_baseUrl+_apiVersion);
+            client.BaseAddress = new Uri(_baseUrl + _apiVersion);
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var model = new ClaimManager(HttpContext, User);
             client.SetBearerToken(model.AccessToken);
-             var response = await client.GetAsync("https://localhost:7157/api/1.0/note");
+            var response = await client.GetAsync("https://localhost:7157/api/1.0/note");
             var content = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
             {
                 _notes = JsonConvert.DeserializeObject<NoteListVm>(content);
-                
+
             }
             return View("AllNote", _notes);
         }
+
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetNoteDetails(Guid id)
@@ -99,15 +91,15 @@ namespace Notes.Frontend.Controllers
         [HttpGet]
         public async Task<IActionResult> CreateNote()
         {
-            
-            return  View();
+
+            return View();
         }
         [Authorize]
         [HttpPost]
         public async Task<IActionResult> CreateNote(CreateNoteDto createNoteDto)
         {
             var client = _clientFactory.CreateClient();
-            client.BaseAddress = new Uri(_baseUrl+_apiVersion);
+            client.BaseAddress = new Uri(_baseUrl + _apiVersion);
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var model = new ClaimManager(HttpContext, User);
             client.SetBearerToken(model.AccessToken);
@@ -115,7 +107,7 @@ namespace Notes.Frontend.Controllers
             return Redirect("/note/getallnote");
 
         }
-         
+
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> UpdateNote(Guid id)
@@ -125,7 +117,7 @@ namespace Notes.Frontend.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var model = new ClaimManager(HttpContext, User);
             client.SetBearerToken(model.AccessToken);
-              var response = await client.GetAsync($"https://localhost:7157/api/1.0/note/{id}");
+            var response = await client.GetAsync($"https://localhost:7157/api/1.0/note/{id}");
             var content = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
             {
@@ -138,7 +130,7 @@ namespace Notes.Frontend.Controllers
         public async Task<IActionResult> UpdateNote(UpdateNoteDto updateNoteDto)
         {
             var client = _clientFactory.CreateClient();
-            client.BaseAddress = new Uri(_baseUrl+_apiVersion);
+            client.BaseAddress = new Uri(_baseUrl + _apiVersion);
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var model = new ClaimManager(HttpContext, User);
             client.SetBearerToken(model.AccessToken);
@@ -148,14 +140,14 @@ namespace Notes.Frontend.Controllers
         }
         [Authorize]
         public async Task<IActionResult> DeleteNote(Guid id)
-        { 
+        {
             var client = _clientFactory.CreateClient();
-            client.BaseAddress = new Uri(_baseUrl+_apiVersion);
+            client.BaseAddress = new Uri(_baseUrl + _apiVersion);
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var model = new ClaimManager(HttpContext, User);
             client.SetBearerToken(model.AccessToken);
-            var response = await client.DeleteAsync($"note/{id}"); 
+            var response = await client.DeleteAsync($"note/{id}");
             return Redirect("/note/getallnote");
-        }    
-    }   
+        }
+    }
 }

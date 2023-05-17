@@ -1,14 +1,8 @@
 ﻿using AutoMapper;
-using Notes.Application.Notes.Queries.GetNoteDetails;
+using Notes.Application.Notes.Queries.GetNoteList;
 using Notes.Persistion;
 using Notes.Tests.Common;
-using System;
 using Shouldly;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Notes.Application.Notes.Queries.GetNoteList;
 
 namespace Notes.Tests.Notes.Queries
 {
@@ -33,7 +27,7 @@ namespace Notes.Tests.Notes.Queries
 
             //Assert
             result.ShouldBeOfType<NoteListVm>();
-            result.Notes.Count.ShouldBe(2);                                                                         
+            result.Notes.Count.ShouldBe(2);
 
         }
     }

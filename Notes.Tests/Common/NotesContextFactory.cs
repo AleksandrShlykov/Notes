@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Notes.Persistion;
 using Notes.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Notes.Persistion;
 
 namespace Notes.Tests.Common
 {

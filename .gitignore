@@ -364,3 +364,11 @@ FodyWeavers.xsd
 
 #Solution project
 Notes.Solution/
+
+#Databases
+Notes.Identity/Alex.Auth.db
+Notes.Identity/Alex.Auth.db-wal
+Notes.Identity/Alex.Auth.db-shm
+Notes.WebApi/Alex.Notes.db
+Notes.WebApi/Alex.Notes.db-wal
+Notes.WebApi/Alex.Notes.db-shm

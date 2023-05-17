@@ -1,13 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
 using MediatR;
-using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
 using Notes.Application.Common.Behaviors;
+using System.Reflection;
 
 namespace Notes.Application
 {
@@ -19,8 +14,8 @@ namespace Notes.Application
             {
                 cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
             });
-            services.AddValidatorsFromAssemblies(new[] {Assembly.GetExecutingAssembly()});
-            services.AddTransient(typeof (IPipelineBehavior<,>), typeof (ValidatorBehaviors<,>));
+            services.AddValidatorsFromAssemblies(new[] { Assembly.GetExecutingAssembly() });
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidatorBehaviors<,>));
             return services;
         }
     }

@@ -1,11 +1,8 @@
-using IdentityServer4.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.FileProviders;
 using Notes.Identity;
 using Notes.Identity.Data;
 using Notes.Identity.Models;
-using System.IO;
 var builder = WebApplication.CreateBuilder(args);
 RegisterService(builder.Services);
 

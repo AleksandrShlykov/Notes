@@ -1,11 +1,6 @@
 ﻿using AutoMapper;
 using Notes.Application.Interfaces;
 using Notes.Persistion;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Notes.Tests.Common
 {
@@ -28,7 +23,7 @@ namespace Notes.Tests.Common
             NotesContextFactory.Destroy(Context);
         }
         [CollectionDefinition("QueryCollection")]
-        public class QueryCollection :ICollectionFixture<QueryTestFixture>
+        public class QueryCollection : ICollectionFixture<QueryTestFixture>
         {
 
         }

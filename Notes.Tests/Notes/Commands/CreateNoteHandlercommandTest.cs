@@ -1,12 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Notes.Application.Notes.Commands.CreateNote;
 using Notes.Tests.Common;
-using Xunit;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Notes.Tests.Notes.Commands
 {
@@ -15,10 +9,12 @@ namespace Notes.Tests.Notes.Commands
         [Fact]
         public async Task CreateNoteCommandHandler_Success()
         {
+            //Arrenge
             var handler = new CreateNoteCommandHandler(_context);
             var noteDetails = "note details";
             var noteName = "note name";
 
+            //Act
             var noteId = await handler.Handle(new CreateNoteCommand
             {
                 Title = noteName,
@@ -26,9 +22,10 @@ namespace Notes.Tests.Notes.Commands
                 UserId = NotesContextFactory.UserAId
             }, CancellationToken.None);
 
+            //Assert
             Assert.NotNull(
-                await _context.Notes.SingleOrDefaultAsync(note=>
-                note.Id == noteId && note.Title == noteName && note.Details == noteDetails 
+                await _context.Notes.SingleOrDefaultAsync(note =>
+                note.Id == noteId && note.Title == noteName && note.Details == noteDetails
                 && note.UserId == NotesContextFactory.UserAId));
         }
     }
