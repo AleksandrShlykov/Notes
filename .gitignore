@@ -371,3 +371,7 @@ Notes.Identity/Alex.Auth.db-shm
 Notes.WebApi/Alex.Notes.db
 Notes.WebApi/Alex.Notes.db-wal
 Notes.WebApi/Alex.Notes.db-shm
+
+# bin and obf directories
+bin
+obj
