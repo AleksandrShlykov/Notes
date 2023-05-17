@@ -1,14 +1,9 @@
 ﻿using MediatR;
-using MediatR.Pipeline;
 using Microsoft.EntityFrameworkCore;
 using Notes.Application.Common.Exceptions;
 using Notes.Application.Interfaces;
-using Notes.Application.Notes.Commands.CreateNote;
 using Notes.Domain;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -29,10 +24,10 @@ namespace Notes.Application.Notes.Commands.UpdateNote
                 throw new NotFoundException(nameof(Note), request.Id);
             }
             entity.Details = request.Details;
-            entity.Title= request.Title;
+            entity.Title = request.Title;
             entity.EditDate = DateTime.Now;
             await _dbContext.SaveChangesAsync(cancellationToken);
-            return ;
+            return;
         }
 
 

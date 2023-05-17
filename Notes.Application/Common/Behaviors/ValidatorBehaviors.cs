@@ -1,16 +1,13 @@
-﻿using AutoMapper.Configuration;
-using FluentValidation;
+﻿using FluentValidation;
 using MediatR;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Notes.Application.Common.Behaviors
 {
-    public class ValidatorBehaviors<TRequest, TResponse> 
+    public class ValidatorBehaviors<TRequest, TResponse>
         : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
     {
         private readonly IEnumerable<IValidator<TRequest>> _validators;

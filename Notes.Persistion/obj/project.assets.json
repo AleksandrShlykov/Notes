@@ -1517,11 +1517,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Code\\Study\\repos\\Notes.Backend\\Notes.Persistion\\Notes.Persistion.csproj",
+      "projectUniqueName": "C:\\Code\\Study\\repos\\Notes\\Notes.Persistion\\Notes.Persistion.csproj",
       "projectName": "Notes.Persistion",
-      "projectPath": "C:\\Code\\Study\\repos\\Notes.Backend\\Notes.Persistion\\Notes.Persistion.csproj",
+      "projectPath": "C:\\Code\\Study\\repos\\Notes\\Notes.Persistion\\Notes.Persistion.csproj",
       "packagesPath": "C:\\Users\\Aleks\\.nuget\\packages\\",
-      "outputPath": "C:\\Code\\Study\\repos\\Notes.Backend\\Notes.Persistion\\obj\\",
+      "outputPath": "C:\\Code\\Study\\repos\\Notes\\Notes.Persistion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Aleks\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1538,8 +1538,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Code\\Study\\repos\\Notes.Backend\\Notes.Application\\Notes.Application.csproj": {
-              "projectPath": "C:\\Code\\Study\\repos\\Notes.Backend\\Notes.Application\\Notes.Application.csproj"
+            "C:\\Code\\Study\\repos\\Notes\\Notes.Application\\Notes.Application.csproj": {
+              "projectPath": "C:\\Code\\Study\\repos\\Notes\\Notes.Application\\Notes.Application.csproj"
             }
           }
         }

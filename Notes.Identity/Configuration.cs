@@ -1,7 +1,6 @@
 ﻿using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
-using System.Collections;
 
 namespace Notes.Identity
 {
@@ -53,7 +52,7 @@ namespace Notes.Identity
                     },
                 PostLogoutRedirectUris =
                     {
-                        "https://localhost:7227/signout-oidc"
+                        "https://localhost:7227/signout-callback-oidc"
                     },
                 AllowedScopes =
                     {

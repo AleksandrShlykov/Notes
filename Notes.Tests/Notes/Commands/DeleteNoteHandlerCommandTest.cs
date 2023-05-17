@@ -1,12 +1,7 @@
-﻿using Notes.Application.Notes.Commands.DeleteNote;
-using Notes.Tests.Common;
-using Notes.Application.Common.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Notes.Application.Common.Exceptions;
 using Notes.Application.Notes.Commands.CreateNote;
+using Notes.Application.Notes.Commands.DeleteNote;
+using Notes.Tests.Common;
 
 namespace Notes.Tests.Notes.Commands
 {
@@ -29,11 +24,12 @@ namespace Notes.Tests.Notes.Commands
                 );
 
             //Assert
-            Assert.Null(_context.Notes.SingleOrDefault(note => note.Id == NotesContextFactory.NoteIdForDelete));    
+            Assert.Null(_context.Notes.SingleOrDefault(note => note.Id == NotesContextFactory.NoteIdForDelete));
         }
 
         [Fact]
-        public async void DeleteNoteCommandHandler_FailOnWrongId() {
+        public async void DeleteNoteCommandHandler_FailOnWrongId()
+        {
             //Arrange
             var handler = new DeleteNoteCommandHandler(_context);
 

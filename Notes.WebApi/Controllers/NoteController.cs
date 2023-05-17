@@ -1,21 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using Notes.Application.Notes.Queries.GetNoteList;
-using System;
-using Notes.Application.Notes.Queries.GetNoteDetails;
-using Notes.WebAPI.Modelas;
-using AutoMapper;
-using Notes.Application.Notes.Commands.CreateNote;
-using Notes.Application.Notes.Commands.UpdateNote;
-using Notes.Application.Notes.Commands.DeleteNote;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Notes.Application.Notes.Commands.CreateNote;
+using Notes.Application.Notes.Commands.DeleteNote;
+using Notes.Application.Notes.Commands.UpdateNote;
+using Notes.Application.Notes.Queries.GetNoteDetails;
+using Notes.Application.Notes.Queries.GetNoteList;
+using Notes.WebAPI.Modelas;
 
 namespace Notes.WebAPI.Controllers
 {
-    //[ApiVersion("1.0")]
+    [ApiVersion("1.0")]
     //[ApiVersion("2.0")]
 
-    //[ApiVersionNeutral]
+    [ApiVersionNeutral]
     [Produces("application/json")]
     [Route("api/{version:apiVersion}/[controller]")]
     public class NoteController : BaseController
@@ -114,7 +112,7 @@ namespace Notes.WebAPI.Controllers
         /// <returns>Returns NoContent</returns>
         /// <response code="200">Success</response>
         /// <response code="401">If the user unauthtorized</response>
-        
+
         [Authorize]
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]

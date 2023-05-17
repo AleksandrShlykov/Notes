@@ -1,20 +1,15 @@
-using Microsoft.Extensions.Configuration;
-using Notes.Application.Interfaces;
-using System.Reflection;
-using Notes.Application;
-using Notes.Persistion;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using AutoMapper;
-using Microsoft.Extensions.Hosting;
-using Notes.Application.Middleware;
-using Microsoft.Extensions.Options;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using Notes.WebApi;
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Mvc;
-using NuGet.Protocol.Core.Types;
-using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using Notes.Application;
+using Notes.Application.Interfaces;
+using Notes.Application.Middleware;
+using Notes.Persistion;
+using Notes.WebApi;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -74,7 +69,7 @@ void RegisterServices(IServiceCollection services)
                 ValidateAudience = false
             };
             options.Authority = $"https://localhost:7032";
-         
+
             options.RequireHttpsMetadata = false;
 
         });
@@ -108,7 +103,7 @@ void Configuration(WebApplication app, IWebHostEnvironment env)
     {
         foreach (var description in provider.ApiVersionDescriptions)
         {
-            
+
             config.SwaggerEndpoint(
                 $"/swagger/{description.GroupName}/swagger.json",
                 description.GroupName.ToUpperInvariant());

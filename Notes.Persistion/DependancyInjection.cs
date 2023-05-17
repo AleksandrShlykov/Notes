@@ -2,11 +2,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Notes.Application.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Notes.Persistion
 {
@@ -19,10 +14,10 @@ namespace Notes.Persistion
             {
                 options.UseSqlite(connectionString);
             });
-            services.AddScoped<INotesDbContext>(provider => 
+            services.AddScoped<INotesDbContext>(provider =>
             provider.GetService<NotesDbContext>());
 
-            return services; 
+            return services;
         }
     }
 }

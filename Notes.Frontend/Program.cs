@@ -1,27 +1,26 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Routing;
-using System.Configuration;
 using System.Web.Http;
 
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews(options =>
 {
-    options.EnableEndpointRouting =false;
+    options.EnableEndpointRouting = false;
 });
 
-builder.Services.AddHttpContextAccessor();              
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 
 
-builder.Services.AddAuthentication(config=>
+builder.Services.AddAuthentication(config =>
 {
     config.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    config.DefaultChallengeScheme = "oidc";
+    config.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
 })
     .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddOpenIdConnect("oidc", config=>
+    .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, config =>
     {
         config.Authority = "https://localhost:7032";
         config.ClientSecret = "notesWebapp_secret";
@@ -30,8 +29,9 @@ builder.Services.AddAuthentication(config=>
         config.ResponseType = "code";
 
     });
-builder.Services.AddApiVersioning(options=>{
-      options.DefaultApiVersion = new ApiVersion(1, 0);
+builder.Services.AddApiVersioning(options =>
+{
+    options.DefaultApiVersion = new ApiVersion(1, 0);
     options.AssumeDefaultVersionWhenUnspecified = true;
     options.ReportApiVersions = true;
 });

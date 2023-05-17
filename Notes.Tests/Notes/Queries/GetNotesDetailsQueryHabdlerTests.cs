@@ -2,11 +2,6 @@
 using Notes.Application.Notes.Queries.GetNoteDetails;
 using Notes.Persistion;
 using Notes.Tests.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Shouldly;
 
 namespace Notes.Tests.Notes.Queries
