@@ -88,7 +88,6 @@ void RegisterServices(IServiceCollection services)
     });
     services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
     services.AddSwaggerGen();
-    services.AddApiVersioning();
 }
 
 void Configuration(WebApplication app, IWebHostEnvironment env)

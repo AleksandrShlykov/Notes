@@ -11,7 +11,7 @@ using Notes.WebAPI.Modelas;
 namespace Notes.WebAPI.Controllers
 {
     [ApiVersion("1.0")]
-    //[ApiVersion("2.0")]
+    [ApiVersion("2.0")]
 
     [ApiVersionNeutral]
     [Produces("application/json")]

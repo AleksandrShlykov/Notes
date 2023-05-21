@@ -27,7 +27,7 @@ namespace Notes.Frontend.Controllers
         }
         [AllowAnonymous]
         [HttpGet]
-        public async Task<IActionResult> LoginPage()
+        public IActionResult LoginPage()
         {
             if (User.Identity.IsAuthenticated)
             {
@@ -37,13 +37,12 @@ namespace Notes.Frontend.Controllers
         }
         [Authorize]
         [HttpGet]
-        public async Task<IActionResult> GoToLogin()
+        public  IActionResult GoToLogin()
         {
-
-            return Redirect("/note/getallnote");
+            return  Redirect("/note/getallnote");
         }
         [Authorize]
-        public async Task<IActionResult> Logout()
+        public IActionResult Logout()
         {
             return SignOut(CookieAuthenticationDefaults.AuthenticationScheme,
             OpenIdConnectDefaults.AuthenticationScheme);
@@ -89,7 +88,7 @@ namespace Notes.Frontend.Controllers
         }
         [Authorize]
         [HttpGet]
-        public async Task<IActionResult> CreateNote()
+        public IActionResult CreateNote()
         {
 
             return View();
@@ -135,7 +134,7 @@ namespace Notes.Frontend.Controllers
             var model = new ClaimManager(HttpContext, User);
             client.SetBearerToken(model.AccessToken);
             var response = await client.PutAsJsonAsync("note", updateNoteDto);
-            //var response = await client.PutAsync();
+            
             return View();
         }
         [Authorize]
